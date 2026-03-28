@@ -829,6 +829,14 @@ src="https://www.facebook.com/tr?id=732211489617687&ev=PageView&noscript=1"
   justify-content: center;
   position: relative;
 }
+.ws-video-grid-row2 {
+  display: flex;
+  gap: 20px;
+  padding: 10px 50px 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .ws-video-scroll-wrapper {
   position: relative;
 }
@@ -863,6 +871,15 @@ src="https://www.facebook.com/tr?id=732211489617687&ev=PageView&noscript=1"
     padding: 10px 20px 20px;
   }
   .ws-video-grid::-webkit-scrollbar { display: none; }
+  .ws-video-grid-row2 {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 10px 20px 20px;
+  }
+  .ws-video-grid-row2::-webkit-scrollbar { display: none; }
 }
 .ws-video-card {
   flex: 1;
@@ -905,6 +922,7 @@ src="https://www.facebook.com/tr?id=732211489617687&ev=PageView&noscript=1"
 
 @media (max-width: 768px) {
   .ws-video-grid { padding: 10px 20px 20px; }
+  .ws-video-grid-row2 { padding: 10px 20px 20px; }
   .ws-video-card { flex: 0 0 180px; }
   .ws-video-rec .ws-section-title { font-size: 38px; }
 }
@@ -2308,6 +2326,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
       <h2 class="ws-section-title ws-animate">שמעו מהמשתתפים</h2>
       <p class="ws-section-subtitle ws-animate ws-animate-delay-1">סיפורים אמיתיים ממי שכבר היו בסדנה</p>
     </div>
+    <!-- Row 1: 4 videos with arrows on mobile -->
     <div class="ws-video-scroll-wrapper">
       <button class="ws-video-arrow ws-video-arrow-right" id="ws-arrow-right">&#8249;</button>
       <button class="ws-video-arrow ws-video-arrow-left" id="ws-arrow-left">&#8250;</button>
@@ -2320,22 +2339,43 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
         </div>
         <div class="ws-video-card ws-animate ws-animate-delay-2">
           <div class="ws-video-placeholder">
+            <iframe src="https://player.vimeo.com/video/1177844280?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="ws-video-card-title">עמית ליצמן</div>
+        </div>
+        <div class="ws-video-card ws-animate ws-animate-delay-3">
+          <div class="ws-video-placeholder">
             <iframe src="https://player.vimeo.com/video/1175758378?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
           </div>
           <div class="ws-video-card-title">סיון קליקה</div>
         </div>
-        <div class="ws-video-card ws-animate ws-animate-delay-3">
-          <div class="ws-video-placeholder">
-            <iframe src="https://player.vimeo.com/video/1175758471?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
-          <div class="ws-video-card-title">אביב חרובי</div>
-        </div>
         <div class="ws-video-card ws-animate ws-animate-delay-4">
           <div class="ws-video-placeholder">
-            <iframe src="https://player.vimeo.com/video/1175758428?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/1177844165?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
           </div>
-          <div class="ws-video-card-title">ויקטוריה שמואלי</div>
+          <div class="ws-video-card-title">איציק</div>
         </div>
+      </div>
+    </div>
+    <!-- Row 2: 3 videos, no arrows -->
+    <div class="ws-video-grid-row2">
+      <div class="ws-video-card ws-animate ws-animate-delay-1">
+        <div class="ws-video-placeholder">
+          <iframe src="https://player.vimeo.com/video/1177844382?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="ws-video-card-title">יוסי לוי</div>
+      </div>
+      <div class="ws-video-card ws-animate ws-animate-delay-2">
+        <div class="ws-video-placeholder">
+          <iframe src="https://player.vimeo.com/video/1175758471?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="ws-video-card-title">אביב חרובי</div>
+      </div>
+      <div class="ws-video-card ws-animate ws-animate-delay-3">
+        <div class="ws-video-placeholder">
+          <iframe src="https://player.vimeo.com/video/1175758428?autoplay=0&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="ws-video-card-title">ויקטוריה שמואלי</div>
       </div>
     </div>
   </section>
