@@ -868,18 +868,26 @@ src="https://www.facebook.com/tr?id=732211489617687&ev=PageView&noscript=1"
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 10px 20px 20px;
+    padding: 10px 10px 10px;
+    gap: 10px;
+    flex-wrap: nowrap;
   }
   .ws-video-grid::-webkit-scrollbar { display: none; }
-  .ws-video-grid-row2 {
-    justify-content: flex-start;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 10px 20px 20px;
+  .ws-video-grid .ws-video-card {
+    flex: 0 0 calc(33.33% - 8px);
+    max-width: calc(33.33% - 8px);
+    scroll-snap-align: start;
   }
-  .ws-video-grid-row2::-webkit-scrollbar { display: none; }
+  .ws-video-grid-row2 {
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 10px 10px 20px;
+    gap: 10px;
+  }
+  .ws-video-grid-row2 .ws-video-card {
+    flex: 0 0 calc(33.33% - 8px);
+    max-width: calc(33.33% - 8px);
+  }
 }
 .ws-video-card {
   flex: 1;
@@ -921,13 +929,9 @@ src="https://www.facebook.com/tr?id=732211489617687&ev=PageView&noscript=1"
 }
 
 @media (max-width: 768px) {
-  .ws-video-grid { padding: 10px 20px 20px; }
-  .ws-video-grid-row2 { padding: 10px 20px 20px; }
-  .ws-video-card { flex: 0 0 180px; }
   .ws-video-rec .ws-section-title { font-size: 38px; }
 }
 @media (max-width: 480px) {
-  .ws-video-card { flex: 0 0 160px; }
   .ws-video-rec .ws-section-title { font-size: 30px; }
 }
 
@@ -2052,7 +2056,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
 /* ========== SPOTS BAR ANIMATION ========== */
 @keyframes ws-spots-load {
   from { width: 0%; }
-  to   { width: 62.5%; }
+  to   { width: 50%; }
 }
 @keyframes ws-spots-blink {
   0%, 100% { opacity: 1; }
@@ -2183,7 +2187,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
   <section class="ws-hero ws-section-dark">
     <div class="ws-container" style="flex-direction: column; text-align: center;">
       <div class="ws-hero-content" style="text-align: center;">
-        <div class="ws-hero-top-badge"><span class="ws-badge-dot"></span>Claude Code - מחזור #3 - נשארו 3 מקומות בלבד!</div>
+        <div class="ws-hero-top-badge"><span class="ws-badge-dot"></span>Claude Code - מחזור #4 - נשארו 4 מקומות אחרונים!</div>
         <h1 class="ws-animate">ליצור את <span class="ws-hero-phrase" style="color: var(--purple);">האפליקציה&#x2060;/&#x2060;המוצר הדיגיטלי הראשון שלך</span><br>בפחות מ-<span style="color: var(--purple);">5 שעות</span><br class="ws-mobile-break"> עם ליווי אישי מאיתנו<br>בסדנה פרונטלית ממוקדת</h1>
         <div class="ws-hero-body ws-animate ws-animate-delay-1">
           <p>אם כבר הבנת שלדעת לעבוד עם קלוד קוד היום זה <span style="color: var(--purple); font-weight: 700;">חובה</span><br>אנחנו כאן כדי ללוות אותך <span style="color: var(--purple); font-weight: 700;">צעד אחר צעד</span> - גם אם אין לך שום ניסיון או רקע טכני</p>
@@ -2198,9 +2202,9 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
         </div>
       </div>
       <div class="ws-hero-content" style="text-align: center;">
-        <div class="ws-cohort-badge ws-animate ws-animate-delay-2">סדנת Claude Code פרונטלית – <span style="color: var(--yellow);">מחזור #3</span> יוצא לדרך</div>
+        <div class="ws-cohort-badge ws-animate ws-animate-delay-2">סדנת Claude Code פרונטלית – <span style="color: var(--yellow);">מחזור #4</span> יוצא לדרך</div>
         <div class="ws-hero-pills ws-animate ws-animate-delay-3" style="justify-content: center;">
-          <span class="ws-pill"><span class="ws-pill-icon">&#128197;</span> יום שני, 30.03.2026</span>
+          <span class="ws-pill"><span class="ws-pill-icon">&#128197;</span> יום ראשון, 05.04.2026</span>
           <span class="ws-pill"><span class="ws-pill-icon">&#9201;</span> 16:30-22:00</span>
           <span class="ws-pill"><span class="ws-pill-icon">&#128205;</span> סקיי טאוור, תל אביב</span>
         </div>
@@ -2302,7 +2306,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
         <div class="ws-spots-bar">
           <div class="ws-spots-filled" id="ws-spots-bar-1" style="width: 0%;"></div>
         </div>
-        <p class="ws-spots-text"><span id="ws-spots-count-1" style="color: var(--yellow); font-weight: 700;">5/8</span> מקומות נתפסו</p>
+        <p class="ws-spots-text"><span id="ws-spots-count-1" style="color: var(--yellow); font-weight: 700;">4/8</span> מקומות נתפסו</p>
       </div>
       <form class="ws-form ws-animate ws-animate-delay-2" action="#" method="POST">
         <input type="text" name="name" placeholder="השם שלך" required>
@@ -2310,7 +2314,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
         <input type="email" name="email" placeholder="כתובת אימייל" required>
         <div class="ws-form-consent">
           <input type="checkbox" id="ws-consent-1" required>
-          <label for="ws-consent-1">אני מאשר/ת שקראתי את <a href="https://aiagentschool.co.il/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA/" target="_blank">מדיניות הפרטיות</a> ואת <a href="https://aiagentschool.co.il/%d7%aa%d7%a0%d7%90%d7%99-%d7%94%d7%a9%d7%99%d7%9e%d7%95%d7%a9-%d7%91%d7%90%d7%aa%d7%a8/" target="_blank">תנאי השימוש</a> של האתר, ואני מאשר/ת קבלת דיוור מחברת aiagentschool.</label>
+          <label for="ws-consent-1">אני מאשר/ת שקראתי את <a href="https://aiagentschool.co.il/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA/" target="_blank">מדיניות הפרטיות</a> ואת <a href="https://aiagentschool.co.il/%d7%aa%d7%a0%d7%90%d7%99-%d7%94%d7%a9%d7%99%d7%9e%d7%95%d7%a9-%d7%91%d7%90%d7%aa%d7%a8/" target="_blank">תנאי השימוש</a> של האתר, ואני מאשר/ת קבלת דיוור ועדכונים מחברת aiagentschool ועובדיה.</label>
         </div>
         <div class="ws-form-submit">
           <button type="submit" class="ws-cta-btn">שלחו לי פרטים</button>
@@ -2724,7 +2728,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
       <h2 class="ws-section-title ws-animate">כמה זה עולה?</h2>
       <div class="ws-price-box ws-animate ws-animate-delay-1">
         <div class="ws-price-old">4,000 ש"ח</div>
-        <div class="ws-price-amount">1,699 ₪</div>
+        <div class="ws-price-amount">2,399 ₪</div>
         <div class="ws-price-note">למשתתף, כולל מע"מ</div>
         <div class="ws-price-body">המחיר כולל את כל תכני הסדנה, חבילת הכלים שלי, סשן הסיכום בזום, גישה לקבוצת הוואטסאפ, וערכת הפיקוד המהיר.</div>
         <div class="ws-price-payment">התשלום מראש. ביט, העברה בנקאית, או כרטיס אשראי.</div>
@@ -2768,7 +2772,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
         <input type="email" name="email" placeholder="כתובת אימייל" required>
         <div class="ws-form-consent">
           <input type="checkbox" id="ws-consent-2" required>
-          <label for="ws-consent-2">אני מאשר/ת שקראתי את <a href="https://aiagentschool.co.il/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA/" target="_blank">מדיניות הפרטיות</a> ואת <a href="https://aiagentschool.co.il/%d7%aa%d7%a0%d7%90%d7%99-%d7%94%d7%a9%d7%99%d7%9e%d7%95%d7%a9-%d7%91%d7%90%d7%aa%d7%a8/" target="_blank">תנאי השימוש</a> של האתר, ואני מאשר/ת קבלת דיוור מחברת aiagentschool.</label>
+          <label for="ws-consent-2">אני מאשר/ת שקראתי את <a href="https://aiagentschool.co.il/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA/" target="_blank">מדיניות הפרטיות</a> ואת <a href="https://aiagentschool.co.il/%d7%aa%d7%a0%d7%90%d7%99-%d7%94%d7%a9%d7%99%d7%9e%d7%95%d7%a9-%d7%91%d7%90%d7%aa%d7%a8/" target="_blank">תנאי השימוש</a> של האתר, ואני מאשר/ת קבלת דיוור ועדכונים מחברת aiagentschool ועובדיה.</label>
         </div>
         <div class="ws-form-submit">
           <button type="submit" class="ws-cta-btn">שלחו לי פרטים</button>
@@ -2807,7 +2811,7 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
             <span class="ws-faq-arrow">&#9660;</span>
           </div>
           <div class="ws-faq-answer">
-            <p>בזמן שמכללות גובות אלפי שקלים - הסדנה ב-1,699 ש"ח. עסקה אחת שתסגרו בעזרת מה שתלמדו יכולה להחזיר את ההשקעה פי כמה.</p>
+            <p>בזמן שמכללות גובות אלפי שקלים - הסדנה ב-2,399 ש"ח. עסקה אחת שתסגרו בעזרת מה שתלמדו יכולה להחזיר את ההשקעה פי כמה.</p>
           </div>
         </div>
         <div class="ws-faq-item ws-animate ws-animate-delay-2">
@@ -2890,9 +2894,10 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
   window.addEventListener('resize', wsFixFullWidth);
 
   // Template variables
-  var WORKSHOP_DATE = '2026-03-30T16:30:00+03:00';
+  var WORKSHOP_DATE = '2026-04-05T16:30:00+03:00';
   var FORM_ACTION = 'https://script.google.com/macros/s/AKfycbzttiaExDfY9BLxxP9lE5RJ3sZWgINcqGB_j2MsZWH16LZA39Na1NGx5zJdl926kUa2vg/exec';
   var PAYMENT_URL = 'https://secure.cardcom.solutions/EA/EA5/b6ws8dIKcE215VvulK6kuw/PaymentSP';
+  var MAKE_WEBHOOK = 'https://hook.eu1.make.com/iqhsgrdr1g4925o53su9gyfc0b8fexyu';
 
   // ========== COUNTDOWN ==========
   function updateCountdown() {
@@ -3024,6 +3029,13 @@ html, body { margin: 0; padding: 0; box-sizing: border-box; }
       document.body.appendChild(tempForm);
       tempForm.submit();
       tempForm.remove();
+
+      // Trigger Make webhook
+      fetch(MAKE_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      }).catch(function() {});
 
       btn.textContent = 'הפרטים נשלחו! מעביר לתשלום...';
       btn.style.backgroundColor = '#05A020';
